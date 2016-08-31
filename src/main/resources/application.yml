@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+#    url: jdbc:h2:mem:sampledb
+#    url: jdbc:h2:~sampledb
+    url: jdbc:h2:tcp://localhost/~/sampledb
+#    driverClassName: org.hsqldb.jdbcDriver
+#    url: jdbc:hsqldb:mem:sampledb
+#    url: jdbc:hsqldb:file:sampledb
+#    url: jdbc:hsqldb:hsql://localhost/sampledb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+# flywayを使うのでJPAでのDB生成をオフにする、検証だけする      
+#      ddl-auto: update
+      ddl-auto: none
+#      ddl-auto: validate
+    generate-ddl: true
+logging:
+  level:
+    om: DEBUG
